@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0f172a] text-slate-200 selection:bg-blue-500/30 overflow-x-hidden pb-20">
       
-      {/* HEADER (Inchangé) */}
+      {/* HEADER */}
       <header className="relative w-full h-24 flex items-center justify-center border-b border-blue-900/30 bg-[#0f172a]/80 backdrop-blur-xl sticky top-0 z-50">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] md:w-[60rem] h-32 flex items-center justify-center pointer-events-none">
           <img 
@@ -16,10 +16,14 @@ export default function Home() {
         <div className="absolute bottom-0 h-[2px] w-full bg-gradient-to-r from-transparent via-blue-900/50 to-transparent"></div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-6 pt-16 flex flex-col items-center relative z-10">
+      {/* CONTENEUR PRINCIPAL : 
+        J'ai remplacé "max-w-7xl" par "w-full" et ajusté le padding (px) 
+        pour que ça prenne toute la largeur de l'écran.
+      */}
+      <div className="w-full mx-auto px-6 md:px-12 lg:px-20 pt-16 flex flex-col items-center relative z-10">
         
-        {/* Hero Section */}
-        <section className="text-center mb-24 max-w-4xl">
+        {/* Hero Section (restreinte au centre pour la lisibilité du texte) */}
+        <section className="text-center mb-24 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
             Votre PC Windows. <br />
             Sécurisé par votre <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Android</span>.
@@ -51,63 +55,60 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- NOUVELLE GRILLE STYLE "LOGITECH" --- */}
-        {/* max-w-7xl pour prendre bien toute la largeur, gap-10 pour espacer les blocs */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full mt-10">
+        {/* --- GRILLE PLEINE LARGEUR --- */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 w-full mt-10">
           
           {/* Bloc 1 : L'application Mobile */}
           <div className="flex flex-col w-full group cursor-pointer">
-            {/* Conteneur Image avec un effet de zoom subtil au survol */}
-            <div className="w-full h-64 md:h-72 rounded-2xl overflow-hidden bg-[#151c2e] border border-blue-900/30 mb-8 relative">
+            {/* HAUTEUR AGRANDIE : h-80 sur mobile, 450px sur tablette, 550px sur grand écran */}
+            <div className="w-full h-80 md:h-[450px] lg:h-[550px] rounded-2xl overflow-hidden bg-[#0a0f1d] border border-blue-900/30 mb-8 relative shadow-2xl">
               <img 
                 src="/image/mobile-sonar.jpg" 
                 alt="Application Mobile AegisLock"
-                // object-cover permet de remplir le cadre uniformément, object-top aligne vers le haut
-                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent opacity-60"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent opacity-80"></div>
             </div>
-            {/* Texte aligné à gauche, Titre en majuscules */}
-            <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider mb-4">
               Le Contrôle à portée de main
             </h3>
-            <p className="text-slate-400 leading-relaxed text-lg">
-              Transformez votre téléphone en sonar de sécurité. Appairez un nouveau PC facilement et activez la détection de proximité pour un déverrouillage sans le moindre effort.
+            <p className="text-slate-400 leading-relaxed text-lg lg:text-xl pr-4">
+               Appairez un nouveau PC facilement et activez la détection de proximité pour un déverrouillage sans le moindre effort.
             </p>
           </div>
 
           {/* Bloc 2 : L'écran de parrainage (Appairage) */}
           <div className="flex flex-col w-full group cursor-pointer">
-             <div className="w-full h-64 md:h-72 rounded-2xl overflow-hidden bg-[#151c2e] border border-blue-900/30 mb-8 relative">
+             <div className="w-full h-80 md:h-[450px] lg:h-[550px] rounded-2xl overflow-hidden bg-[#0a0f1d] border border-blue-900/30 mb-8 relative shadow-2xl">
               <img 
                 src="/image/desktop-pairing.png" 
                 alt="Appairage Windows"
-                className="w-full h-full object-cover object-left-top transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover object-left-top transition-transform duration-1000 group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent opacity-60"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent opacity-80"></div>
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider mb-4">
               Appairage Bluetooth Rapide
             </h3>
-            <p className="text-slate-400 leading-relaxed text-lg">
+            <p className="text-slate-400 leading-relaxed text-lg lg:text-xl pr-4">
               Scannez les appareils à proximité et associez votre ordinateur à votre téléphone en quelques secondes. Une connexion BLE chiffrée de bout en bout.
             </p>
           </div>
 
           {/* Bloc 3 : L'écran des réglages */}
           <div className="flex flex-col w-full group cursor-pointer">
-             <div className="w-full h-64 md:h-72 rounded-2xl overflow-hidden bg-[#151c2e] border border-blue-900/30 mb-8 relative">
+             <div className="w-full h-80 md:h-[450px] lg:h-[550px] rounded-2xl overflow-hidden bg-[#0a0f1d] border border-blue-900/30 mb-8 relative shadow-2xl">
               <img 
                 src="/image/desktop-settings.png" 
                 alt="Réglages AegisLock"
-                className="w-full h-full object-cover object-left-top transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover object-left-top transition-transform duration-1000 group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent opacity-60"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent opacity-80"></div>
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider mb-4">
               Sécurité sur Mesure
             </h3>
-            <p className="text-slate-400 leading-relaxed text-lg">
+            <p className="text-slate-400 leading-relaxed text-lg lg:text-xl pr-4">
               Ajustez la distance de verrouillage, le délai de réponse et forcez l'utilisation de la biométrie (Face ID, Empreinte) pour une protection qui s'adapte à vos besoins.
             </p>
           </div>
