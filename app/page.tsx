@@ -79,7 +79,7 @@ export default function Home() {
                    alt="android icon"
                    className="object-contain w-14 h-14 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] relative z-10"
                  />
-                 <span className="relative z-10 text-xl">Télécharger l'App</span>
+                 <span className="relative z-10 text-xl">Télécharger sur Android</span>
                </button>
                
                <button className="flex items-center justify-center gap-4 bg-slate-800/50 hover:bg-slate-800 text-slate-200 font-semibold py-5 px-10 rounded-2xl border border-blue-900/40 hover:border-blue-500/60 transition-all active:scale-95">
@@ -88,7 +88,7 @@ export default function Home() {
                    alt="pc icon"
                    className="object-contain w-14 h-14 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
                  />
-                 <span className="text-xl">Agent Logiciel</span>
+                 <span className="text-xl">Télécharger sur Windows</span>
                </button>
             </div>
           </Reveal>
