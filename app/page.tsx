@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0f172a] text-slate-200 selection:bg-blue-500/30 overflow-x-hidden">
+    <main className="min-h-screen bg-[#0f172a] text-slate-200 selection:bg-blue-500/30 overflow-x-hidden pb-20">
       
       {/* HEADER (Inchangé) */}
       <header className="relative w-full h-24 flex items-center justify-center border-b border-blue-900/30 bg-[#0f172a]/80 backdrop-blur-xl sticky top-0 z-50">
@@ -16,10 +16,10 @@ export default function Home() {
         <div className="absolute bottom-0 h-[2px] w-full bg-gradient-to-r from-transparent via-blue-900/50 to-transparent"></div>
       </header>
 
-      <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 flex flex-col items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-6 pt-16 flex flex-col items-center relative z-10">
         
         {/* Hero Section */}
-        <section className="text-center mb-20 max-w-4xl">
+        <section className="text-center mb-24 max-w-4xl">
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
             Votre PC Windows. <br />
             Sécurisé par votre <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Android</span>.
@@ -30,11 +30,8 @@ export default function Home() {
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
-             {/* BOUTON ANDROID */}
              <button className="flex items-center justify-center gap-4 bg-blue-600 hover:bg-blue-500 text-white font-bold py-5 px-10 rounded-2xl shadow-lg shadow-blue-500/30 transition-all active:scale-95 border border-blue-400/20 group relative overflow-hidden">
                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 blur-md"></div>
-               
-               {/* 🚀 CHANGEMENT TAILLE : w-14 h-14 (au lieu de 11) */}
                <img 
                  src="/image/android_icon.png" 
                  alt="android icon"
@@ -43,9 +40,7 @@ export default function Home() {
                <span className="relative z-10 text-xl">Télécharger sur Android</span>
              </button>
              
-             {/* BOUTON WINDOWS */}
              <button className="flex items-center justify-center gap-4 bg-slate-800/50 hover:bg-slate-800 text-slate-200 font-semibold py-5 px-10 rounded-2xl border border-blue-900/40 hover:border-blue-500/60 transition-all active:scale-95">
-               {/* 🚀 CHANGEMENT TAILLE : w-14 h-14 */}
                <img 
                  src="/image/windows_icon.png" 
                  alt="windows icon"
@@ -56,76 +51,71 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Grille de fonctionnalités */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+        {/* --- NOUVELLE GRILLE STYLE "LOGITECH" --- */}
+        {/* max-w-7xl pour prendre bien toute la largeur, gap-10 pour espacer les blocs */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full mt-10">
           
-          {/* Feature 1 : Contrôle */}
-          <div className="p-8 rounded-3xl bg-slate-900/40 border border-blue-900/40 hover:border-blue-500/60 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm flex flex-col items-start">
-            <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity blur-2xl"></div>
-            
-            {/* 📦 LE CONTENEUR (CARRÉ) : Agrandit à w-28 h-28 (112px) */}
-            <div className="w-28 h-28 rounded-3xl bg-blue-950/60 border border-blue-900/50 flex items-center justify-center mb-8 group-hover:scale-105 transition-transform shadow-[0_0_30px_rgba(59,130,246,0.15)]">
-               
-               {/* 🖼️ L'ICONE : Agrandie à w-16 h-16 (64px) */}
-               <img 
-                 src="/image/lock_icon.png" 
-                 alt="lock icon"
-                 className="object-contain w-32 h-32 drop-shadow-[0_0_25px_rgba(59,130,246,0.8)]"
-               />
+          {/* Bloc 1 : L'application Mobile */}
+          <div className="flex flex-col w-full group cursor-pointer">
+            {/* Conteneur Image avec un effet de zoom subtil au survol */}
+            <div className="w-full h-64 md:h-72 rounded-2xl overflow-hidden bg-[#151c2e] border border-blue-900/30 mb-8 relative">
+              <img 
+                src="/image/mobile-sonar.jpg" 
+                alt="Application Mobile AegisLock"
+                // object-cover permet de remplir le cadre uniformément, object-top aligne vers le haut
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent opacity-60"></div>
             </div>
-            
-            <h3 className="text-2xl font-bold text-white mb-4">Remote Access</h3>
+            {/* Texte aligné à gauche, Titre en majuscules */}
+            <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wider mb-4">
+              Le Contrôle à portée de main
+            </h3>
             <p className="text-slate-400 leading-relaxed text-lg">
-              Ouvrez votre session Windows d'un simple clic depuis votre téléphone Android.
+              Transformez votre téléphone en sonar de sécurité. Appairez un nouveau PC facilement et activez la détection de proximité pour un déverrouillage sans le moindre effort.
             </p>
           </div>
 
-          {/* Feature 2 : Biométrie */}
-          <div className="p-8 rounded-3xl bg-slate-900/40 border border-blue-900/40 hover:border-blue-500/60 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm flex flex-col items-start">
-             <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity blur-2xl"></div>
-            
-            {/* 📦 LE CONTENEUR : w-28 h-28 */}
-            <div className="w-28 h-28 rounded-3xl bg-blue-950/60 border border-blue-900/50 flex items-center justify-center mb-8 group-hover:scale-105 transition-transform shadow-[0_0_30px_rgba(59,130,246,0.15)]">
-                
-                {/* 🖼️ L'ICONE : w-16 h-16 */}
-                <img 
-                   src="/image/fingerprint_icon.png" 
-                   alt="fingerprint icon"
-                   className="object-contain w-16 h-16 drop-shadow-[0_0_25px_rgba(59,130,246,0.8)]"
-                />
+          {/* Bloc 2 : L'écran de parrainage (Appairage) */}
+          <div className="flex flex-col w-full group cursor-pointer">
+             <div className="w-full h-64 md:h-72 rounded-2xl overflow-hidden bg-[#151c2e] border border-blue-900/30 mb-8 relative">
+              <img 
+                src="/image/desktop-pairing.png" 
+                alt="Appairage Windows"
+                className="w-full h-full object-cover object-left-top transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent opacity-60"></div>
             </div>
-            
-            <h3 className="text-2xl font-bold text-white mb-4">Biométrie Active</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wider mb-4">
+              Appairage Bluetooth Rapide
+            </h3>
             <p className="text-slate-400 leading-relaxed text-lg">
-              Utilisez le capteur d'empreinte de votre mobile pour authentifier votre session PC.
+              Scannez les appareils à proximité et associez votre ordinateur à votre téléphone en quelques secondes. Une connexion BLE chiffrée de bout en bout.
             </p>
           </div>
 
-          {/* Feature 3 : Smart Lock BLE */}
-          <div className="p-8 rounded-3xl bg-slate-900/40 border border-blue-900/40 hover:border-blue-500/60 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm flex flex-col items-start">
-             <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity blur-2xl"></div>
-            
-            {/* 📦 LE CONTENEUR : w-28 h-28 */}
-            <div className="w-28 h-28 rounded-3xl bg-blue-950/60 border border-blue-900/50 flex items-center justify-center mb-8 group-hover:scale-105 transition-transform shadow-[0_0_30px_rgba(59,130,246,0.15)]">
-                
-                {/* 🖼️ L'ICONE : w-16 h-16 */}
-                <img 
-                   src="/image/bluetooth_icon.png" 
-                   alt="bluetooth icon"
-                   className="object-contain w-32 h-32 drop-shadow-[0_0_25px_rgba(59,130,246,0.8)]"
-                />
+          {/* Bloc 3 : L'écran des réglages */}
+          <div className="flex flex-col w-full group cursor-pointer">
+             <div className="w-full h-64 md:h-72 rounded-2xl overflow-hidden bg-[#151c2e] border border-blue-900/30 mb-8 relative">
+              <img 
+                src="/image/desktop-settings.png" 
+                alt="Réglages AegisLock"
+                className="w-full h-full object-cover object-left-top transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent opacity-60"></div>
             </div>
-            
-            <h3 className="text-2xl font-bold text-white mb-4">Smart Lock BLE</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wider mb-4">
+              Sécurité sur Mesure
+            </h3>
             <p className="text-slate-400 leading-relaxed text-lg">
-              Verrouillage automatique instantané dès que la connexion Bluetooth BLE est rompue.
+              Ajustez la distance de verrouillage, le délai de réponse et forcez l'utilisation de la biométrie (Face ID, Empreinte) pour une protection qui s'adapte à vos besoins.
             </p>
           </div>
 
         </div>
       </div>
 
-      <footer className="py-8 text-center text-slate-500 text-sm border-t border-blue-900/30 bg-[#0f172a] relative z-10">
+      <footer className="mt-20 py-8 text-center text-slate-500 text-sm border-t border-blue-900/30 bg-[#0f172a] relative z-10">
         <p className="mb-2 font-medium text-slate-400">© 2026 AegisLock Security.</p>
         <p>Technologie Bluetooth Low Energy (BLE) sécurisée.</p>
       </footer>
